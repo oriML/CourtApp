@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="!isLoginPage(); else loginOutlet">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <mat-toolbar>{{ title }}</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/contact-requests">
+        <mat-icon>contacts</mat-icon>
+        <span>Contacts</span>
+      </a>
+      <a mat-list-item routerLink="/reports/monthly">
+        <mat-icon>assessment</mat-icon>
+        <span>Monthly Report</span>
+      </a>
+      <a mat-list-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #loginOutlet>
+  <router-outlet></router-outlet>
+</ng-template>
+

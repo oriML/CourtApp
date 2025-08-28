@@ -1,0 +1,27 @@
+.monthly-report-container {
+  padding: 20px;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+}
+
+.report-card {
+  margin-bottom: 15px;
+}
+
+/* Hide cards on larger screens */
+.cards-responsive {
+  display: none;
+}
+
+/* Hide table on smaller screens and show cards */
+@media (max-width: 768px) {
+  .table-responsive {
+    display: none;
+  }
+
+  .cards-responsive {
+    display: block;
+  }
+}

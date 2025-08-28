@@ -1,0 +1,17 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar {
+  background: inherit;
+}
+
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

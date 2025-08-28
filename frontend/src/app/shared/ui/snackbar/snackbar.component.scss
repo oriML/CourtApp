@@ -1,0 +1,61 @@
+.snackbar-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: white; /* Default text color */
+  font-weight: 500;
+  min-width: 250px; /* Ensure it's not too small */
+  max-width: 500px; /* Limit width */
+}
+
+.snackbar-icon {
+  margin-right: 12px;
+}
+
+.snackbar-message {
+  flex-grow: 1;
+}
+
+.snackbar-close-button {
+  margin-left: 12px;
+  color: white; /* Close button color */
+}
+
+/* Type-specific styles */
+.snackbar-success {
+  background-color: #4CAF50; /* Green */
+}
+
+.snackbar-error {
+  background-color: #F44336; /* Red */
+}
+
+.snackbar-info {
+  background-color: #2196F3; /* Blue */
+}
+
+.snackbar-warning {
+  background-color: #FFC107; /* Amber */
+}
+
+.snackbar-login {
+  background-color: #009688; /* Teal */
+}
+
+.snackbar-add {
+  background-color: #4FC3F7; /* Light Blue */
+}
+
+.snackbar-delete {
+  background-color: #FF5722; /* Deep Orange */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .snackbar-container {
+    width: 90%;
+    margin: 0 auto; /* Center on small screens */
+  }
+}

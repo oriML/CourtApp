@@ -1,0 +1,23 @@
+.contact-requests-container {
+  padding: 20px;
+  position: relative;
+}
+
+.contact-requests-grid {
+  display: grid;
+  /* The grid columns are now controlled by [cols] in the component TS */
+  gap: 16px;
+}
+
+.add-request-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

@@ -1,0 +1,39 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Rounded corners for the card */
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 15px;
+
+  .mat-mdc-form-field-flex {
+    border-radius: 8px; /* Rounded corners for input fields */
+    overflow: hidden; /* Ensures content respects border-radius */
+  }
+
+  .mat-mdc-form-field-outline-start,
+  .mat-mdc-form-field-outline-end,
+  .mat-mdc-form-field-outline-gap {
+    border-radius: 8px; /* Apply border-radius to the outline parts */
+  }
+}
+
+.login-button {
+  margin-top: 20px;
+  border-radius: 8px; /* Rounded corners for the button */
+}

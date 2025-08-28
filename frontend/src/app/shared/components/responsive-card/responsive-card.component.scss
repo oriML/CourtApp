@@ -1,0 +1,19 @@
+.responsive-card {
+  border-radius: 15px; /* Modern rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 10px; /* Some margin around the card */
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    margin: 5px;
+    border-radius: 10px; /* Slightly less rounded on small screens */
+  }
+}
+
+mat-card-header {
+  padding-bottom: 0;
+}
+
+mat-card-content {
+  padding-top: 10px;
+}

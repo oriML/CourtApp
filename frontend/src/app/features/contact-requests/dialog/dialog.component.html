@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Contact Request' : 'Add Contact Request' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="contactRequestForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="contactRequestForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone">
+      <mat-error *ngIf="contactRequestForm.get('phone')?.hasError('pattern')">
+        Please enter a valid 10-digit phone number
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="contactRequestForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="contactRequestForm.get('email')?.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Departments</mat-label>
+      <mat-select formControlName="departments" multiple>
+        <mat-option *ngFor="let dept of departments" [value]="dept">{{ dept }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" rows="5"></textarea>
+      <mat-error *ngIf="contactRequestForm.get('description')?.hasError('required')">
+        Description is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status">{{ status | titlecase }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="contactRequestForm.invalid">
+    {{ isEditMode ? 'Save Changes' : 'Add Request' }}
+  </button>
+</mat-dialog-actions>

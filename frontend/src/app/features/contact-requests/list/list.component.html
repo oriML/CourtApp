@@ -1,0 +1,19 @@
+<div class="contact-requests-container">
+  <div *ngIf="loading" class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+
+  <mat-grid-list [cols]="cols" gutterSize="16px" class="contact-requests-grid" *ngIf="!loading">
+    <mat-grid-tile *ngFor="let request of (contactRequests$ | async)">
+      <app-contact-request-card
+        [request]="request"
+        (edit)="editRequest($event)"
+        (delete)="deleteRequest($event)"
+      ></app-contact-request-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <button mat-fab color="accent" class="add-request-fab" (click)="addRequest()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
